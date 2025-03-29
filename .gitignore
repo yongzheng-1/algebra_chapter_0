@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.thm
+.history/*
+*.synctex(busy)
+
+algebra_chapter_0.pdf
