@@ -6,5 +6,6 @@
 *.thm
 .history/*
 *.synctex(busy)
+*.dvi
 
 algebra_chapter_0.pdf

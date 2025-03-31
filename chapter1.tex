@@ -1,4 +1,4 @@
-\section{Chapter I.\hspace{0.2em} Preliminaries: Set theory and categories}
+\section{Chapter I.\hspace{0.2em} Preliminaries: Set theory \\ and categories}
 
 \subsection{\textsection1. Naive Set Theory}
 
@@ -6,7 +6,14 @@
 \begin{problem}[1.1]
 	Locate a discussion of Russel's paradox, and understand it.
 \end{problem}
+
 \begin{solution}
+Naive set theory assumes the so-called naive or unrestricted comprehension principle: For any formula 
+$\phi(x)$ containing $x$ as a free variable, there will exist the set $\{x: \phi(x)\}$ whose members are
+exactly those objects that satisfy $\phi(x)$. Let's assume $\phi(x)$ be $x\notin x$ and 
+$R = \{x: x\notin x\}$. Is $R$ a member of itself?. If $R\notin R$, 
+then the condition is satisfied. It implies $R\in R$. This is a contradiction. On the other hand, if $R\in R$,
+then $R$ must satisfy the condition, i.e. $R\notin R$. This is also a contradiction.
 \end{solution}
 
 % Problem 1.2
@@ -19,16 +26,25 @@
 \end{problem}
 
 \begin{solution}
+By the reflexivity, $\forall a\in S$, $a\in [a]_{\sim}$. So $$\bigcup_{[v]_{\sim}\in \mathscr{P}_{\sim}}[v]_{\sim} = S.$$
+Suppose $c\in [a]_{\sim}\cap[b]_{\sim}$, then $a \sim c, c\sim b$. By transitivity, $a\sim b$.
+$\forall x\in [b]_{\sim}$, $b\sim x$. By transitivity again, $a\sim x$. It implies $[b]_{\sim}\subset[a]_{\sim}$. Similarly,
+$[a]_{\sim}\subset[b]_{\sim}$ holds too. Therefore, 
+$$\text{if } [a]_{\sim} \cap [b]_{\sim}\neq \emptyset \Rightarrow [a]_{\sim} = [b]_{\sim}.$$
+It proves that $\mathscr{P}_{\sim}$ is a partition of $S$.
 \end{solution}
 
 % Problem 1.3
 \hypertarget{Exercise I.1.3}{}
 \begin{problem}[1.3]
-	$\vartriangleright$ Given a partition $\mathscr{P}$ on a set $S$, show how to define an equivalence relation $\sim$ such that $\mathscr{P} = \mathscr{P}_{\sim}$. [\S1.5]
+	$\vartriangleright$ Given a partition $\mathscr{P}$ on a set $S$, show how to define an equivalence 
+	relation $\sim$ such that $\mathscr{P} = \mathscr{P}_{\sim}$. [\S1.5]
 \end{problem}
 
 \begin{solution}
-	
+Define a relation $\sim$ on $S$ as
+$$a\sim b \iff  \exists A\in \mathscr{P}\text{, such that } a\in A, b\in A.$$
+It is easy to prove this relation is an equivalence on $S$.
 \end{solution}
 
 
@@ -38,8 +54,14 @@
 \end{problem}
 
 \begin{solution}
+The number of equivalence relations is the same as the number of partitions. All possible partitions of $\{1,2,3\}$ are:
+$$\{\{1\}, \{2\}, \{3\}\},$$
+$$\{\{1\}, \{2,3\}\},$$
+$$\{\{1,2\},\{3\}\},$$
+$$\{\{1,3\}, \{2\}\},$$
+$$\{\{1,2,3\}\}.$$
+So, there are $5$ equivalence relations on $\{1,2,3\}$.
 \end{solution}
-
 
 % Problem 1.5
 \begin{problem}[1.5]
@@ -50,12 +72,257 @@
 \end{problem}
 
 \begin{solution}
+A relation $R$ on set $\{1,2,3\}$ is a subset  of $\{1,2,3\}\times \{1,2,3\}$. Taking subset 
+$$\{\{1,1\}, \{2,2\}, \{3,3\}, \{1,2\},\{2,1\},\{1,3\}, \{3,1\}\}$$
+It is easy to verify that $R$ is reflexive and symmetric. $1R2, 1R3$, but $2$ and $3$ are not related by $R$
+because neither$\{2,3\}$ nor $\{3,2\}$ is in $R$. Thus, $R$ is not transitive.
 \end{solution}
 
 % Problem 1.6
 \hypertarget{Exercise I.1.6}{}
 \begin{problem}[1.6]
-Define a relation $\sim$ on the set $\mathbb{R}$ of real numbers, by setting $a\sim b\iff b-a \in\mathbb{Z}$. Prove that this is an equivalence relation, and find a \textquoteleft compelling' description for $\mathbb{R}/\sim$. Do the same for the relation $\approx$ on the plane $\mathbb{R}\times\mathbb{R}$ defined by declaring $(a_1, a_2)\approx(b_1, b_2)\iff b_1-a_1 \in\mathbb{Z}$ and $b_2-a_2 \in\mathbb{Z}$. [\textsection II.8.1, II.8.10]
+$\vartriangleright$ Define a relation $\sim$ on the set $\mathbb{R}$ of real numbers, by 
+setting $a\sim b\iff b-a \in\mathbb{Z}$. 
+Prove that this is an equivalence relation, and find a \textquoteleft compelling' description for $\mathbb{R}/\sim$. 
+Do the same for the relation $\approx$ on the plane $\mathbb{R}\times\mathbb{R}$ defined by declaring 
+$(a_1, a_2)\approx(b_1, b_2)\iff b_1-a_1 \in\mathbb{Z}$ and $b_2-a_2 \in\mathbb{Z}$. [\textsection II.8.1, II.8.10]
 \end{problem}
+
 \begin{solution}
+(Reflexivity): $\forall a\in \mathbb{R}, a-a=0\in\mathbb{Z}$. It leads to the reflexivity.\\
+(Symmetry): $\forall a, b\in \mathbb{R}$, if $a-b=k\in \mathbb{Z}$, then $b-a=-k\in \mathbb{Z}$. Thus, $\sim$ is symmetric.\\
+(Transitivity): $\forall a, b,c\in \mathbb{R}$, if  $a-b=k_1\in  \mathbb{Z}, b-c=k_2\in  \mathbb{Z}$, 
+then $a-c=k_1+k_2\in  \mathbb{Z}$. Therefore, $\sim$ is transitive.  
+$$\mathbb{R}/\sim \cong [0,1).$$
+The proof of $\approx$ being an equivalence relation $\mathbb{R}\times\mathbb{R}$ is similar to that of $\sim$. Thus, we omit it.
+$$(\mathbb{R}\times\mathbb{R})/\approx \cong [0,1)\times [0,1).$$
 \end{solution}
+
+\subsection{\textsection2. Functions between sets}
+
+% Problem 2.1
+\hypertarget{Exercise I.2.1}{}
+\begin{problem}[2.1]
+$\vartriangleright$ How many different bijections are there between a set $S$ with $n$ elements
+and itself? [\textsection II.2.1]
+\end{problem}
+
+\begin{solution}
+The number of different bijections between $S$ with $n$ elements to itself is $n!$.
+\end{solution}
+
+% Problem 2.2
+\hypertarget{Exercise I.2.2}{}
+\begin{problem}[2.2]
+ $\rhd$ Prove statement (2) in Proposition 2.1. You may assume that given a
+  family of disjoint subsets of a set, there is a way to choose one element in
+  each member of the family. [\S2.5, V3.3]
+\end{problem}
+
+\begin{solution}
+($\Longrightarrow$): If $f: A\rightarrow B$ has right-inverse, then there is a function $g: B\rightarrow  A$ such that $f\circ g = \text{id}_{B}$. Thus
+$$b = \text{id}_{B}(b) = f\circ g(b) = f(g(b)), \forall b\in B,$$that is, $f$ sends $g(b)\in A$ to $b$, showing $f$ is surjective. \\
+($\Longleftarrow $): Now assume $f: A\rightarrow B$ is surjective. In order to construct a function
+$g: B\rightarrow A$, we have to assign a unique $g(b) = a\in A$ for all $b\in B$. Since the fiber $f^{-1}(b)$, $\forall b\in B$ is not empty, 
+we can select one element $a\in f^{-1}(b)$ as the image of $b$ under $g$. i.e.   
+$$g(b) = a, \text{ where } a\in f^{-1}(b).$$
+For this $g$, we have $f\circ g(b) = f(a) = b=\text{id}_{B}$. Thus $g$ is a right-inverse of $f$. 
+\end{solution}
+
+% Problem 2.3
+\begin{problem}[2.3]
+Prove that the inverse of a bijection is a bijection and that the compositionof two bijections is a bijection.
+\end{problem}
+
+\begin{solution}
+If $f: A\rightarrow B$ is a bijection, then there exists $g: B\rightarrow A$ such that 
+$$f\circ g = \text{id}_{B}, \indent g\circ f = \text{id}_{A}.$$
+It implies $f$ is a left-inverse and a right-inverse of $g$. Therefore $g$ is a bijection.\\
+If $f: A\rightarrow B$ and $g: B\rightarrow C$ are two bijections, then
+$$f\circ f^{-1} = \text{id}_{B},\indent f^{-1}\circ f = \text{id}_{A},$$
+$$g\circ g^{-1} = \text{id}_{C},\indent g^{-1}\circ g = \text{id}_{B}.$$
+Thus,
+$$(g\circ f)\circ(f^{-1}\circ g^{-1}) =(g\circ \text{id}_{B})\circ g^{-1}=g\circ g^{-1}= \text{id}_{C},$$
+$$(f^{-1}\circ g^{-1})\circ(g\circ f) =f^{-1}\circ (\text{id}_{A}\circ f)=f^{-1}\circ f=\text{id}_{A}.$$
+this means that $g\circ f$ has both left-inverse($f^{-1}\circ g^{-1}$) and right-inverse($f^{-1}\circ g^{-1}$). Therefore $g\circ f$ is a bijection.
+\end{solution}
+
+% Problem 2.4
+\begin{problem}[2.4]
+ $\rhd$ Prove that ‘isomorphism’ is an equivalence relation (on any set of sets).[\S4.1]
+\end{problem}
+
+\begin{solution}
+Suppose $S$ be a set of sets.\\
+(Reflexivity): $\forall A\in S$, $A\cong A$ since $\text{id}_{A}: A\rightarrow A$ is the bijection between $A$ to itself.\\
+(Symmetry): For $A\in S, B\in S$, if $A\cong B$, then there is a bijection $f: A\rightarrow B$. The inverse of $f$, denoted by $f^{-1}$
+is a bijection between $B$ and $A$. This means $B\cong A$.\\
+(Transitivity): For $A, B, C\in S$ satisfying $A\cong B, B\cong C$, there exist bijections $f: A\rightarrow B$ and $g: B\rightarrow C$. Composition of
+bijections is bijection, i.e. $g\circ f: A\rightarrow C$ is a bijection. It implies $A\cong C$.
+\end{solution}
+
+% Problem 2.5
+\begin{problem}[2.5]
+  $\rhd$ Formulate a notion of \textit{epimorphism}, in the style
+  of the notion of \textit{monomorphism} seen in \S 2.6, and prove a result
+  analogous to Proposition 2.3, for epimorphisms and surjections.[\S 2.6, \S 4.2]
+\end{problem}
+
+\begin{solution}
+ A function $f:A\to B$ is an \textit{epimorphism} if for all sets $Z$
+  and all functions $\alpha',\alpha'':B\to Z$
+  $$\alpha'\circ f = \alpha''\circ f\Longrightarrow \alpha' = \alpha''.$$\\
+  Now, we prove: $f: A\rightarrow B$ is surjective if and only if $f$ is epimorphism.
+  
+  ($\implies$): If $f$ is surjective, then it has a right-inverse $g$ such that $$f\circ g = \text{id}_{B}.$$
+  For all functions $\alpha',\alpha'': B\to Z$, 
+  $$\alpha'\circ f = \alpha''\circ f \Longrightarrow \alpha'\circ (f\circ g) = \alpha''\circ (f\circ g) \Longrightarrow \alpha'\circ \text{id}_{B} = \alpha''\circ \text{id}_{B} \Longrightarrow \alpha' = \alpha''.$$
+  
+  ($\impliedby$): Let's take $Z=\{1,2,3\}$ and define 
+  $$\alpha'=\begin{cases}
+  			1, &b\in \text{im}f,\\
+			2, &b\notin\text{im}f			
+  			\end{cases}
+  $$
+    $$\alpha''=\begin{cases}
+  			1, &b\in \text{im}f,\\
+			3, &b\notin\text{im}f			
+  			\end{cases}
+  $$
+ It is obvious that $\alpha'\circ f = \alpha''\circ f = 1$. Thus $\alpha' = \alpha''$. It means $\alpha'$ could not be $2$ and 
+ $\alpha''$ could not be $3$. i.e. there isn't $b\notin \text{im}f$. It proves that $f$ is a surjection. 
+\end{solution}
+
+% Problem 2.6
+\begin{problem}[2.6]
+  With notation as in Example 2.4, explain how any function $f:A\to B$ determines
+  a section of $\pi_A$.
+\end{problem}
+
+\begin{solution}
+The section of a surjection is a right-inverse of the function. Define a function $g: A\rightarrow A\times B$ as
+$g(a)=(a, f(a))$.
+It's easy to verify 
+$$\pi_{A} \circ g =\text{id}_A.$$ It proves that $g: A\rightarrow A\times B$ is a right-inverse of $\pi: A\times B \rightarrow A$.
+\end{solution}
+
+% Problem 2.7
+\begin{problem}[2.7]
+  Let $f:A\to B$ be any function. Prove that the graph $\Gamma_f$ of $f$ is
+  isomorphic to $A$.
+\end{problem}
+
+\begin{solution}
+Denote $\Gamma_f = \{(a, f(a)): a\in A\}$ and define $\pi_f: \Gamma_f \rightarrow A$ as 
+$$\pi_f((a,f(a))) = a.$$
+Let's define another functon $g: A\rightarrow \Gamma_f$ as $$g(a) = (a,f(a)).$$
+So
+$$(\pi_f\circ g)(a) = \pi_f(g(a)) = \pi_f((a,f(a)))=a \Rightarrow (\pi_f\circ g) = \text{id}_{A}.$$
+and
+$$(g\circ \pi_f)((a,f(a))) = g(\pi_f((a,f(a))))=g(a)=(a,f(a))\Rightarrow (g\circ \pi_f) = \text{id}_{\Gamma_f}.$$
+This means $\pi_f: \Gamma_f\rightarrow A$ is a bijection. i.e. $\Gamma_f\cong A$.
+\end{solution}
+
+% Problem 2.8.
+\begin{problem}[2.8]
+  Describe as explicitly as you can all terms in the canonical decomposition (cf.
+  \S2.8) of the function $\mathbb{R}\to\mathbb{C}$ defined by $r\mapsto e^{2\pi
+    ir}$. (This exercise matches one previously. Which one?)
+\end{problem}
+
+\begin{solution}
+Let $f: \mathbb{R}\to\mathbb{C}$ be $f(r) = e^{2\pi ir}$. 
+$$f(r_1) = f(r_2) \iff 1-e^{2\pi i(r_2-r_1)} = 0 \iff r_2-r_1\in\mathbb{Z}.$$
+Denote the unit circle $\{e^{2\pi i r} | r\in\mathbb{R}\}$ on the complex plane as $\mathbb{C}_{|z|=1}$.
+Define an equivalence relation $\sim$ on $\mathbb{R}$ as $a\sim b \iff a-b\in\mathbb{Z}$ and 
+a function $\tilde{f}: \mathbb{R}/\sim\rightarrow \mathbb{C}_{|z|=1}$ as
+$$\tilde{f}([r]_{\sim}) := e^{2\pi i r}.$$
+It is easy to verify that $\tilde{f}$ is well-defined and is a bijection and the following diagram holds
+\[ 
+\begin{tikzcd}
+\mathbb{R} \arrow[r, "f"] \arrow[d, "\pi"'] &[0.5em]  \mathbb{C}  \\
+ \mathbb{R}/\sim \arrow[r, "\tilde{f}"'] & \mathbb{C}_{|z|=1} \arrow[hookrightarrow,u, "i"] 
+\end{tikzcd}
+\]
+where $\pi$ is the natural projection, $\textit{i}$ is the inclusion. Therefore, $f=\textit{i}\circ\tilde{f}\circ\pi$.
+\end{solution}
+
+
+% Problem 2.9
+\hypertarget{Exercise I.2.9}{}
+\begin{problem}[2.9]
+  $\rhd$ Show that if $A'\cong A''$ and $B'\cong B''$, and further
+  $A'\cap B'=\varnothing$ and $A''\cap B''=\varnothing$, then $A'\cup B'\cong A''\cup
+  B''$. Conclude that the operation $A\amalg B$ is well-defined up to
+  \textit{isomorphism} (cf. \S2.9) [\S2.9, 5.7]
+\end{problem}
+
+\begin{solution}
+Let $f_1: A'\to A'', f_2: B'\to B''$ be the bijections. Define 
+$$f(x)=\begin{cases}
+	f_1(x), &x\in A',\\
+	f_2(x), &x\in B' 	
+\end{cases}$$
+Since $A'\cap B'=\varnothing$, the function $f$ is well-defined. Now, we prove that $f$ is a bijection.
+
+(Injection): For $x_1, x_2\in A'\cup B'$ and $x_1\neq x_2$, there are four cases:
+\begin{enumerate}
+\item if $x_1\in A', x_2\in A'$, then $f(x_1)=f_1(x_1)\neq f_1(x_2) = f(x_2)$.
+\item if $x_1\in B', x_2\in B'$, then $f(x_1)=f_2(x_1)\neq f_2(x_2) = f(x_2)$.
+\item if $x_1\in A', x_2\in B'$, then $f(x_1)=f_1(x_1)\in A'', f(x_2)=f_2(x_2)\in B"$. Since $A''\cap B'' = \varnothing$, $f(x_1)\neq f(x_2)$.
+\item if $x_1\in B', x_2\in A'$, then $f(x_1)=f_2(x_1)\in B'', f(x_2)=f_1(x_2)\in A"$. Since $A''\cap B'' = \varnothing$, $f(x_1)\neq f(x_2)$.
+\end{enumerate}
+It proves that $f$ is an injection.
+
+
+(Surjection): For $x\in A''\cup B"$, we have either $x\in A''$ or $x\in B"$. Therefore there exists $a\in A'$ or $a\in B'$ such that $f(a)=f_1(a)=x$ or $f(a)=f_2(a)=x$.
+
+The existence of a bijection between $A'\cup B'$ and $A''\cup B''$ implies $A'\cup B'\cong A''\cup B''$.
+
+Let $A', A''$ be two 'copies' of $A$ and $B', B''$ be two 'copies' of $B$. It is obvious that $A'\cong A''$ and $B'\cong B''$. 
+Meanwhile, by the disjoin union, we know that $A'\cap B'=\varnothing$ and $A''\cap B''=\varnothing$. By the result of this problem, we have 
+$$A'\cup B'\cong A''\cup B''.$$ It implies $A\coprod B$ is well-defined in term of isomorphism.   
+\end{solution}
+
+% Problem 2.10
+\hypertarget{Exercise I.2.10}{}
+\begin{problem}[2.10]
+  $\rhd$ Show that if $A$ and $B$ are finite sets, then $\abs{B^A} =
+  \abs{B}^{\abs{A}}$. [\S2.1, 2.11, I.4.1]
+\end{problem}
+
+\begin{solution}
+By definition, $B^A = \{f | f: A\to B\}$. If both $A$ and $B$ are finite, then for each $x\in A$, it can be assigned $|B|$ different values. 
+Therefore, the number of functions from $A$ to $B$ is $\abs{B}^{\abs{A}}$. i.e. $\abs{B^A} =
+  \abs{B}^{\abs{A}}$
+\end{solution}
+
+% Problem 2.11
+\begin{problem}[2.11]
+  $\rhd$ In view of Exercise 2.10, it is not unreasonable to use $2^A$ to denote
+  the set of functions from an arbitrary set $A$ to a set with $2$ elements (say
+  $\{0,1\}$). Prove that there is a bijection between $2^A$ and the \textit{power
+    set} of $A$ (cf. \S1.2). [\S1.2, III.2.3]
+\end{problem}
+
+\begin{solution}
+Let $\mathcal{P}(A)$ be the power set of $A$. Define a mapping between $\mathcal{P}(A)\to 2^A$ as following:
+$$f(X) = g, \text{ where } g(X) = 1, g(A\backslash X) = 0.$$ Let's prove this map is a bijection.
+
+(Injection): For $X_1, X_2\in \mathcal{P}(A), X_1\neq X_2$, we have two functions 
+$$g_1\big{|}_{X_1} = 1, g_1\big{|}_{A\backslash X_1} = 0,$$
+$$g_2\big{|}_{X_2} = 1, g_1\big{|}_{A\backslash X_2} = 0.$$
+If $X_1\backslash X_2\neq \varnothing$, then $g_1\big{|}_{X_1\backslash X_2} = 1\neq 0 = g_2\big{|}_{X_1\backslash X_2}$.
+If $X_2\backslash X_1\neq \varnothing$, then $g_1\big{|}_{X_2\backslash X_1} = 0\neq 1 = g_2\big{|}_{X_2\backslash X_1}$. 
+It proves that $g_1 \neq g_2$.
+
+(Surjection): For a function $g: A\to \{0,1\}$, $$f(\{x| x\in A \text{ and } g(x)= 1\}) = g,$$
+showing $f$ is surjection.
+\end{solution}
+
+
+
+
+
+
+
