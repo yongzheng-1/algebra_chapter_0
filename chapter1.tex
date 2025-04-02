@@ -131,7 +131,8 @@ For this $g$, we have $f\circ g(b) = f(a) = b=\text{id}_{B}$. Thus $g$ is a righ
 
 % Problem 2.3
 \begin{problem}[2.3]
-Prove that the inverse of a bijection is a bijection and that the compositionof two bijections is a bijection.
+Prove that the inverse of a bijection is a bijection and that the composition
+of two bijections is a bijection.
 \end{problem}
 
 \begin{solution}
@@ -149,7 +150,8 @@ this means that $g\circ f$ has both left-inverse($f^{-1}\circ g^{-1}$) and right
 
 % Problem 2.4
 \begin{problem}[2.4]
- $\rhd$ Prove that ‘isomorphism’ is an equivalence relation (on any set of sets).[\S4.1]
+ $\rhd$ Prove that ‘isomorphism’ is an equivalence relation (on any set of sets).
+[\S4.1]
 \end{problem}
 
 \begin{solution}
@@ -321,8 +323,308 @@ showing $f$ is surjection.
 \end{solution}
 
 
+\subsection{\textsection3. Categories}
+
+% Problem 3.1
+\hypertarget{Exercise I.3.1}{}
+\begin{problem}[3.1]
+  $\rhd$ Let $\mathsf{C}$ be a category. Consider a structure $\mathsf{C}^{op}$ with:
+  \begin{itemize}
+  \item $\Obj(\mathsf{C}^{op}) := \Obj(\mathsf{C})$;
+  \item for $A$, $B$ objects of $\mathsf{C}^{op}$ (hence, objects of $\mathsf{C}$), $\Hom_{\mathsf{C}^{op}} (A,B) := \Hom_\mathsf{C}(B,A)$
+  \end{itemize}
+  Show how to make this into a category (that is, define composition of morphisms
+  in $\mathsf{C}^{op}$ and verify the properties listed in \textsection3.1).
+  Intuitively, the `opposite' category $\mathsf{C}^{op}$ is simply obtained by `reversing all the
+  arrows' in C. [5.1, \textsection VIII.1.1, \textsection IX.1.2, IX.1.10]
+\end{problem}
+
+\begin{solution}
+Let's define $\ast$ as the composition of morphisms between objects in $\mathsf{C}^{op}$ and $\circ$ 
+as the composition of morphisms between objects in $\mathsf{C}$.
+\begin{enumerate}
+\item For every object $A$ of $\Obj(\mathsf{C}^{op})$, the identity $1_A \in \Hom_{\mathsf{C}^{op}} (A,A)$ is the one 
+in $\Hom_{\mathsf{C}}(A,A)$.
+\item For $f\in \Hom_{\mathsf{C}^{op}} (A,B)$ and $g\in \Hom_{\mathsf{C}^{op}}(B,C)$. 
+$g\circ f \in \Hom_\mathsf{C}(C,A)$. By definition, $g\circ f \in \Hom_{\mathsf{C}^{op}}(A,C)$. i.e. The composition
+$$(f,g) \mapsto f\ast g := g\circ f$$ determines a morphism in $\Hom_{\mathsf{C}^{op}}(A,C)$.
+\item For $f\in \Hom_{\mathsf{C}^{op}} (A,B)$, $g\in \Hom_{\mathsf{C}^{op}}(B,C)$ and $g\in \Hom_{\mathsf{C}^{op}}(C,D)$, then
+$$(f\ast g)\ast h = h\circ (g\circ f) = (h\circ g)\circ f = f\ast(g\ast h).$$
+i.e. The composition laws is associative.
+\item For $1_A \in \Hom_{\mathsf{C}^{op}}(A,A)$, $1_B \in \Hom_{\mathsf{C}^{op}}(B,B)$ and $f\in \Hom_{\mathsf{C}^{op}} (A,B)$, we have
+$$f\ast 1_A = 1_A\circ f = f, \text{ and } 1_B\ast f = f\circ 1_B = f.$$
+i.e. The identity morphisms are identities with respect to composition.
+\end{enumerate}
+It proves the structure $\mathsf{C}^{op}$ defined in this problem is a category. 
+\end{solution}
+
+% Problem 3.2
+\begin{problem}[3.2]
+  If $A$ is a finite set, how large is $\mathrm{End}_{\mathsf{Set}}(A)$?
+\end{problem}
+
+\begin{solution}
+The set $\mathrm{End}_{\mathsf{Set}}(A)$ is the set of functions (as morphism) from $A$ to $A$. Let $\abs{A}=n$, then 
+$\abs{\mathrm{End}_{\mathsf{Set}}(A)} = n^n$.
+\end{solution}
+
+% Problem 3.3
+\begin{problem}[3.3]
+  $\vartriangleright$ Formulate precisely what it means to say that $1_a$ is an identity with respect to composition in Example 3.3, 
+  and prove this assertion. [\textsection3.2]
+\end{problem}
+
+\begin{solution}
+$1_a\in \Hom(a,a)$ tells us $a\sim a$, $1_b\in \Hom(b,b)$ tells us $b\sim b$. Let $f\in\Hom(a,b)$. It implies $a\sim b$.
+$$a\sim a \text{ and } a\sim b \Longrightarrow  a\sim b => f1_a = f,$$
+$$a\sim b \text{ and } b\sim b \Longrightarrow  a\sim b => 1_bf = f.$$
+It proves that identity morphisms are identity with respect to composition.
+\end{solution}
+
+% Problem 3.4
+\begin{problem}[3.4]
+  Can we define a category in the style of Example 3.3 using the relation $<$ on
+  the set $\mathbb{Z}$?
+\end{problem}
+
+\begin{solution}
+No. We could not have an identity in $\Hom(n,n)$ since $n \nless n$.
+\end{solution}
+
+% Problem 3.5
+\begin{problem}[3.5]
+  $\rhd$ Explain in what sense Example 3.4 is an instance of the categories
+  considered in Example 3.3. [\S 3.2]
+\end{problem}
+
+\begin{solution}
+The set inclusion $\subseteq$ is a relation defined on members in $\mathscr{P}$.
+\begin{enumerate}
+\item (Reflexivity): For any $A\in \mathscr{P}$, $A\subseteq A$.
+\item (Transitivity): For $A, B, C\in \mathscr{P}$, if $A\subseteq B, B\subseteq C$, then $A\subseteq C$.
+\end{enumerate} 
+Thus, the power set $\mathscr{P}$ and set inclusion satisfy the assumption of Example 3.3. Therefore it is a category.
+\end{solution}
+
+% Problem 3.6
+\begin{problem}[3.6]
+  $\rhd$ (Assuming some familiarity with linear algebra.) Define a category
+  $\mathsf{V}$ by taking $\Obj(\mathsf{V}) = \mathbb{N}$ and letting
+  $\Hom_{\mathsf{V}}(m,n) = $ the set of $m\times n$ matrices with real
+  entries, for all $m,n\in\mathbb{N}$. (We will leave the reader the task of
+  making sense of a matrix with 0 rows or columns.) Use product of matrices to
+  define composition. Does this category `feel' familiar? [\S VI.2.1, \S VIII.1.3]
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
 
 
+% Problem 3.7
+\begin{problem}[3.7]
+  $\rhd$ Define carefully the objects and morphisms in Example 3.7, and draw the
+  diagram corresponding to compositon. [\S 3.2]
+\end{problem}
 
+\begin{solution}
+Let $\mathbb{C}$ be a category. We define the structure, denoted by $\mathsf{C}^{A}$ as following:
+\begin{enumerate}
+\item $\Obj(\mathsf{C}^{A})$ = all morphisms from $A$ to any object of $\mathsf{C}$. i.e. an object
+of $\mathsf{C}^{A}$ is a morphism $f\in \Hom_{\mathsf{C}}(A, Z)$ for some object $Z$ of $\mathsf{C}$.
+\item For $f\in \Hom_{\mathsf{C}}(A, Z)$ and $g\in \Hom_{\mathsf{C}}(A, X)$, 
+define $$\Hom_{\mathsf{C}^{A}}(f,g) = \{\sigma\big{|}\sigma\in \Hom_{\mathsf{C}}(Z, X)\text{ such that } \sigma f = g\}.$$
+\end{enumerate}
+Equipped the structure defined above, $\mathsf{C}^{A}$ is a category. In fact
+\begin{enumerate}
+\item For object $f\in \Hom_{\mathsf{C}}(A, Z)$ of $\mathsf{C}^{A}$, the identity $1_{f}$ can be chosen as the 
+identity $1_{Z}$ in $\Hom_{\mathsf{C}}(Z, Z)$ since $f = 1_Zf$.
+\item Let $f\in \Hom_{\mathsf{C}}(A, Z_1),g\in \Hom_{\mathsf{C}}(A, Z_2),h\in \Hom_{\mathsf{C}}(A, Z_3)$ be objects 
+of $\mathsf{C}^{A}$.
+$$f_{\mathsf{C}^{A}}\in \Hom_{\mathsf{C}^{A}}(f, g)\iff f_{\mathsf{C}^{A}}(f) = g 
+\iff \exists \sigma_1\in \Hom_{\mathsf{C}}(Z_1, Z_2) \text{ s.t. } \sigma_1 f = g,$$ 
+$$g_{\mathsf{C}^{A}}\in \Hom_{\mathsf{C}^{A}}(g, h) \iff g_{\mathsf{C}^{A}}(g) = h 
+\iff \exists \sigma_2\in \Hom_{\mathsf{C}}(Z_2, Z_3) \text{ s.t. } \sigma_2 g = h.$$
 
+Define the composition law $\ast$ as 
+\begin{equation*}
+\begin{split}(f_{\mathsf{C}^{A}} \ast g_{\mathsf{C}^{A}})(f) &:= g_{\mathsf{C}^{A}}(f_{\mathsf{C}^{A}}(f)) \\
+&=g_{\mathsf{C}^{A}}(\sigma_1 f)\\
+&=\sigma_2(\sigma_1 f) \\
+&=(\sigma_2\sigma_2)f
+\end{split}
+\end{equation*}
+Since $\mathsf{C}$ is a category, $\sigma_2\sigma_2 \in \Hom_{\mathsf{C}}(Z_1, Z_3)$. By definition, $\sigma_2\sigma_1$ defines 
+a morphism from $f$ to $h$.
+\item For $f_{\mathsf{C}^{A}}\in \Hom_{\mathsf{C}^{A}}(f, g), g_{\mathsf{C}^{A}}\in \Hom_{\mathsf{C}^{A}}(g, h), 
+h_{\mathsf{C}^{A}}\in \Hom_{\mathsf{C}^{A}}(h, l)$, we have
+\begin{equation*}
+\begin{split}
+((f_{\mathsf{C}^{A}}\ast g_{\mathsf{C}^{A}})\ast h_{\mathsf{C}^{A}})(f) &= h_{\mathsf{C}^{A}}((f_{\mathsf{C}^{A}}\ast g_{\mathsf{C}^{A}})(f))\\
+&=h_{\mathsf{C}^{A}}(g_{\mathsf{C}^{A}}(f_{\mathsf{C}^{A}}(f))) \\&= (\sigma_h\sigma_g\sigma_f)(f)\\
+&=(g_{\mathsf{C}^{A}}\ast h_{\mathsf{C}^{A}})(f_{\mathsf{C}^{A}}(f))\\
+&=(f_{\mathsf{C}^{A}}\ast (g_{\mathsf{C}^{A}}\ast h_{\mathsf{C}^{A}}))(f)
+\end{split}
+\end{equation*}
+i.e the composition law is associative.
+\item The proof of $$1_{\mathsf{C}^{A}}\ast f_{\mathsf{C}^{A}}= f_{\mathsf{C}^{A}}, f_{\mathsf{C}^{A}}\ast 1_{\mathsf{C}^{A}} = f_{\mathsf{C}^{A}}$$ is straightforward.
+\end{enumerate}
+This proves that $\mathsf{C}^{A}$ with structure defined in this problem is a category.
+\end{solution}
 
+% Problem 3.8
+\begin{problem}[3.8]
+  $\rhd$ A \textit{subcategory} ${\mathsf{C}'}$ of a category $\mathsf{C}$ consists of a
+  collection of objects of $\mathsf{C}$, with morphisms
+  $\Hom_{\mathsf{C}'}(A,B) \subseteq \Hom_\mathsf{C}(A,B)$ for all objects $A,B\in\Obj({\mathsf{C}'})$, such
+  that identities and compositions in $\mathsf{C}$ make ${\mathsf{C}'}$ into a category. A
+  subcategory ${\mathsf{C}'}$ is \textit{full} if $\Hom_{\mathsf{C}'}(A,B) = \Hom_\mathsf{C}(A,B)$ for all
+  $A,B\in\Obj({\mathsf{C}'})$. Construct a category of \textit{infinite sets} and explain
+  how it may be viewed as a full subcategory of $\mathsf{Set}$. [4.4,\S VI.1.1, \S
+  VIII.1.3]
+\end{problem}
+
+\begin{solution}
+Denote the collection of infinite sets as $\mathsf{InfSet}$ and define the following structure on it
+\begin{enumerate}
+\item $\Obj(\mathsf{InfSet})=$ the class of sets with infinitely many elements;
+\item for $A, B\in \Obj(\mathsf{InfSet})$, $\Hom_{\mathsf{InfSet}}(A,B) = \{f \big{|} f: A\to B \text{ is a function from } A \text{ to } B\}$.
+\end{enumerate}
+It is easy to prove that $\mathsf{InfSet}$ is a category and it is a full subcategory of $\mathsf{Set}$.
+\end{solution}
+
+% Problem 3.9
+\hypertarget{Exercise I.3.9}{}
+\begin{problem}[3.9]
+  $\rhd$ An alternative to the notion of \textit{multiset} introduced in
+  \S2.2 is obtained by considering sets endowed with equivalence relations;
+  equivalent elements are taken to be multiple instance of elements `of the same
+  kind'. Define a notion of morphism between such enhanced sets, obtaining a
+  category ${\mathsf{MSet}}$ containing (a `copy' of) $\Set$ as a full subcategory. (There
+  may be more than one reasonable way to do this! This is intentionally an
+  open-ended exercise.) Which objects in $\mathsf{MSet}$ determine ordinary multisets as
+  defined in \S2.2 and how? Spell out what a morphism of multisets would be from
+  this point of view. (There are several natural motions of morphisms of
+  multisets. Try to define morphisms in $\mathsf{MSet}$ so that the notion you obtain for
+  ordinary multisets captures your intuitive understanding of these objects.)
+  [\S2.2, \S3.2, 4.5]
+\end{problem}
+
+% Problem 3.10
+\begin{problem}[3.10]
+  Since the objects of a category $\mathsf{C}$ are not (necessarily) sets, it is not clear
+  how to make sense of a notion of `subobject' in general. In some situations it
+  \textit{does} make sense to talk about subobjects, and the subobjects of any
+  given object $A$ in $\mathsf{C}$ are in one-to-one correspondence with the morphisms
+  $A\to\Omega$ for a fixed, special object $\Omega$ of $\mathsf{C}$, called a
+  \textit{subobject classifier}. Show that $\Set$ has a subobject classifier.
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+% Problem 3.11
+\begin{problem}[3.11]
+  $\rhd$ Draw the relevant diagrams and define composition and identities for the
+  category $\mathsf{C}^{A,B}$ mentioned in Example 3.9. Do the same for the category
+  $\mathsf{C}^{\alpha,\beta}$ mentioned in Example 3.10. [\S5.5, 5.12]
+\end{problem}
+
+\begin{solution}
+Let $\mathsf{C}$ be a category, we define the following structure, denoted as $\mathsf{C}^{A,B}$:
+\begin{enumerate}
+\item $\Obj({\mathsf{C}^{A,B}})=\{(f,g, Z)\big{|} 
+\forall Z\in \mathsf{C}, f\in \Hom_{\mathsf{C}}(A, Z), g\in \Hom_{\mathsf{C}}(A, Z)\}$
+%
+\[\begin{tikzcd}
+A \arrow[dr, "f"] & \\
+& Z \\
+B \arrow[ur, "g"'] &
+\end{tikzcd}
+\]
+%
+
+\item A morphism between triple $(f_1, g_1, Z_1)$ and $(f_2, g_2, Z_2)$, denoted by 
+$\sigma_{[(f_1,g_1,Z_1),(f_2,g_2,Z_2)]}$, 
+is defined as
+\begin{equation*}
+\begin{split}
+&\sigma_{[(f_1,g_1,Z_1),(f_2,g_2,Z_2)]}((f_1,g_1,Z_1)) = (f_2,g_2,Z_2) \iff \\
+&\exists \sigma\in \Hom_{\mathsf{C}}(Z_1, Z_2) \text{ s.t. } f_2=\sigma f_1, g_2 = \sigma g_1.
+\end{split}
+\end{equation*}
+%
+\[
+\begin{tikzcd}
+A \arrow[dr, "f_1"] \arrow[drr, bend left, "f_2" near end] & \\
+& Z_1 \arrow[r, "\sigma"] & Z_2 \\
+B \arrow[ur, "g_1"'] \arrow[urr, bend right, "g_2"' near end]&
+\end{tikzcd}
+\]
+%
+
+\item The composition law of morphisms, denoted by $\ast$, is defined as
+\begin{equation*}
+\begin{split}
+&(\sigma_{[(f_1,g_1,Z_1),(f_2,g_2,Z_2)]}\ast \sigma_{[(f_2,g_2,Z_2),(f_3,g_3,Z_3)]})((f_1,g_1,Z_1))\\=&
+\sigma_{[(f_2,g_2,Z_2),(f_3,g_3,Z_3)]}(\sigma_{[(f_1,g_1,Z_1),(f_2,g_2,Z_2)]}((f_1,g_1,Z_1)))\\=&
+\sigma_{[(f_2,g_2,Z_2),(f_3,g_3,Z_3)]}((\sigma_1f_1,\sigma_1 g_1, Z_2))\\=&
+(\sigma_2\sigma_1f_1, \sigma_2\sigma_1g_1,Z_3)
+\end{split}
+\end{equation*}
+%
+\[
+\begin{tikzcd}
+A \arrow[dr, "f_1"] \arrow[drr, bend left, "f_2" near end] \arrow[drrr, bend left, "f_3" near end] & & \\
+& Z_1 \arrow[r, "\sigma_1"] & Z_2 \arrow[r, "\sigma_2"] & Z_3 \\
+B \arrow[ur, "g_1"'] \arrow[urr, bend right, "g_2"' near end] \arrow[urrr, bend right, "g_3"' near end] & &
+\end{tikzcd}
+\begin{tikzcd}
+A \arrow[dr, "f_1"] \arrow[drr, bend left, "f_3" near end] & \\
+& Z_1 \arrow[r, "\sigma_2\sigma_1"] & Z_3 \\
+B \arrow[ur, "g_1"'] \arrow[urr, bend right, "g_3"' near end] &
+\end{tikzcd}
+\]
+%
+\end{enumerate}
+
+For category $\mathsf{C}^{\alpha,\beta}$
+\begin{enumerate}
+\item $\Obj(\mathsf{C}^{\alpha,\beta})=$commutative diagrams
+%
+\[
+\begin{tikzcd}
+& A \arrow[dr, "f"]& \\
+C \arrow[ur, "\alpha"] \arrow[dr, "\beta"'] & & Z\\
+& B \arrow[ur, "g"'] &
+\end{tikzcd}
+\]
+%
+\item morphisms
+%
+\[
+\begin{tikzcd}
+& A \arrow[dr, "f_1"] \arrow[drr, bend left, "f_2" near end] & & \\
+C \arrow[ur, "\alpha"] \arrow[dr, "\beta"] & & Z_1\arrow[r, "\sigma"] & Z_2\\
+& B \arrow[ur, "g_1"'] \arrow[urr, bend right, "g_2"' near end] & &
+\end{tikzcd}
+\]
+%
+\item composition law of morphisms
+%
+\[
+\begin{tikzcd}
+& A \arrow[dr, "f_1"] \arrow[drr, bend left, "f_2" near end] \arrow[drrr, bend left, "f_3" near end] &  & & \\
+C \arrow[ur, "\alpha"] \arrow[dr, "\beta"] & & Z_1\arrow[r, "\sigma_1"] & Z_2 \arrow[r, "\sigma_2"] & Z_3\\
+& B \arrow[ur, "g_1"'] \arrow[urr, bend right, "g_2"' near end] \arrow[urrr, bend right, "g_3"' near end]& & &
+\end{tikzcd}
+\begin{tikzcd}
+& A \arrow[dr, "f_1"] \arrow[drr, bend left, "f_3" near end] & & \\
+C \arrow[ur, "\alpha"] \arrow[dr, "\beta"] & & Z_1\arrow[r, "\sigma_2\sigma_1"] & Z_3\\
+& B \arrow[ur, "g_1"'] \arrow[urr, bend right, "g_3"' near end] & &
+\end{tikzcd}
+\]
+%
+\end{enumerate}
+This proves that $\mathsf{C}^{\alpha,\beta}$ with the structure defined above is a category.
+\end{solution}
