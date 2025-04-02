@@ -1,0 +1,253 @@
+\section{Chapter II.\hspace{0.2em} Groups, first encounter}
+
+\subsection{\textsection1. Definition of group}
+
+%Problem 1.1
+\begin{problem}[1.1]
+$\vartriangleright$ Write a careful proof that every group is the group of isomorphisms of a
+groupoid. In particular, every group is the group of automorphisms of some object
+in some category.[\S 2.1]
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+%Problem 1.2
+\begin{problem}[1.2]
+$\vartriangleright$ Consider the `sets of numbers' listed in \S 1.1, and decide which are made into
+groups by conventional operations such as $+$ and $\cdot$. Even if the answer is negative
+(for example, $(R, \cdot)$ is not a group), see if variations on the definition of these sets
+lead to groups (for example, $(R^{\ast}, \cdot)$ is a group; cf. \S 1.4). [\S 1.2]
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}
+\item $\mathbb{N}$ is not a group under operation $+$ or $\cdot$.
+\item $\mathbb{Z}$ is a group under operation $+$, but not under operation $\cdot$.
+\item $\mathbb{N}^{\ast}$ and $\mathbb{Z}^{\ast}$ can't be a group under operation $\cdot$.
+\item $\mathbb{Q}, \mathbb{R}$ and $\mathbb{C}$ are groups under operation $+$, but can't be groups under operation $\cdot$.
+\item $\mathbb{Q}^{\ast}, \mathbb{R}^{\ast}$ and $\mathbb{C}^{\ast}$ are groups under operation $\cdot$.
+\end{enumerate}
+These statements are easy to be verified. 
+\end{solution}
+
+% Problem 1.3
+\begin{problem}[1.3]
+Prove that $(gh)^{-1}=h^{-1}g^{-1}$ for all elements $g,h$ of a group $G$.
+\end{problem}
+
+\begin{solution}
+Since $$(gh)(h^{-1}g^{-1}) = g(hh^{-1})g^{-1} = gg^{-1} = e_G$$ and $$(h^{-1}g^{-1})(gh) = h^{-1}(g^{-1}g)h=h^{-1}h=e_G,$$
+it turns out $(gh)^{-1}=h^{-1}g^{-1}$.
+\end{solution}
+
+% Problem 1.4
+\begin{problem}[1.4]
+Suppose that $g^2 = e$ for all elements $g$ of a group $G$; prove that $G$ is commutative.
+\end{problem}
+
+\begin{solution}
+By assumption, for all elements $g,h\in G$
+$$hghg=e=gg$$
+it means $hgh=g$ then $hghh=gh$. It implies $hg=gh$.i.e. $G$ is commutative.
+\end{solution}
+
+% Problem 1.5
+\begin{problem}[1.5]
+  The `multiplication table' of a group is an array compiling the results of all
+  multiplications $g \bullet h$:
+\begin{center}
+\begin{tabular}{c||c|c|c|c}
+
+  $\bullet$ & $e$ & $\cdots$ & $h$ & $\cdots$ \\ \hline \hline
+  $e$ & $e$ & $\cdots$ & $h$ & $\cdots$ \\ \hline
+  $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\ \hline
+  $g$ & $g$ & $\cdots$ & $g\bullet h$ & $\cdots$ \\ \hline
+  $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\
+\end{tabular}
+\end{center}
+  (Here $e$ is the identity element. Of course the table depends on the order in
+  which the elements are listed in the top row and leftmost column.) Prove that
+  every row and every column of the multiplication table of a group contains all
+  elements of the group exactly once (like Sudoku diagrams!).
+\end{problem}
+
+\begin{solution}
+If $f\bullet g = f \bullet h$, then $g=h$. It is a contradiction.Hence there is no equal elements in $f$-row. 
+If $g\bullet f= h \bullet f$, then $g=h$. It is a contradiction too. Hence there is no equal elements in $f$-column. 
+\end{solution}
+
+%Problem 1.6
+\begin{problem}[1.6]
+$\neg$ Prove that there is only one possible multiplication table for $G$ if $G$ has
+exactly $1$, $2$, or $3$ elements. Analyze the possible multiplication tables for groups
+with exactly $4$ elements, and show that there are two distinct tables, up to reordering
+the elements of $G$. Use these tables to prove that all groups with $\leq 4$ elements are commutative.
+
+(You are welcome to analyze groups with $5$ elements using the same technique,
+but you will soon know enough about groups to be able to avoid such brute-force
+approaches.) [2.19]
+\end{problem}
+
+\begin{solution}
+If $\abs{G}=1$, then $G=\{1\}$. It is trivial group.
+
+\noindent If $G=\{1, a\}$, then $a^2=1$. 
+
+\noindent If $G=\{1, a, b\}$, then $ab=1$. It implies $a^2=b$. Hence $G$ is a cyclic group $\{1, a, a^2\}$. 
+
+\noindent Now, let consider $G=\{1,a,b,c\}$
+	
+	If one of $a^2, b^2, c^2$ is not $1$, say, $a^2\neq 1$, then $a^3\neq 1$ and $G=\{1,a,a^2, a^3\}$ is a cyclic group. In fact, suppose $a^3=1$. 
+	The possible values of $ab$ are $1$ or $c$. If $ab=1$, then $b=a^2$ and $ac=1$ because $ac=b$ implies $c=a$, this contradicts to our assumption. But if $ac=1$, $ab=1$, then $b=c$ also contradicts to our assumption. 
+Therefore, we must have $ab=c, ac=b$. This leads to $a^2=1$ and contradicts to our assumption. Hence $a^3\neq 1$.
+
+If $a^2=b^2=c^2=1$, then $G=\{1, a, b, ab\}$.
+\end{solution}
+
+% Problem 1.7
+\begin{problem}[1.7]
+Prove Corollary 1.11.
+\end{problem}
+
+\begin{solution}
+($\implies$): This is Lemma 1.10.\\
+($\impliedby$): Suppose $N=n\abs{g}$, then $g^N = (g^{\abs{g}})^n = e^n=e$.
+\end{solution}
+
+% Problem 1.8
+\begin{problem}[1.8]
+$\neg$ Let $G$ be a finite abelian group with exactly one element $f$ of order $2$. Prove
+that $\prod_{g\in G}g=f$.[4.16]
+\end{problem}
+
+\begin{solution}
+By assumption, there are only two elements $1, f$ such that $1^{-1} = 1, f^{-1} = f$. Hence 
+$$\prod_{g\in G}g = (\prod_{g\in G\setminus \{1,f\}}g) \bullet f = (\underbrace{1\bullet 1\bullet \cdots 
+\bullet 1}_{\frac{\abs{G} -2}{2}}) \bullet f = f.$$
+The statement is proved.
+\end{solution}
+
+% Problem 1.9
+\begin{problem}[1.9]
+Let $G$ be a finite group, of order $n$, and let $m$ be the number of elements $g \in G$
+of order exactly $2$. Prove that $n-m$ is odd. Deduce that if $n$ is even, then
+$G$ necessarily contains elements of order $2$.
+\end{problem}
+
+\begin{solution}
+Let's rewrite set $G$ as
+$$G = \{1\} \cup \{g\big{|} g\in G, \abs{g} = 2\}\cup \{g\big{|} g\in G, \abs{g} > 2\}.$$ 
+If $\abs{g} > 2$, then $\abs{g^{-1}} > 2$ and $g\neq g^{-1}$. Hence $\abs{\{g\big{|} g\in G, \abs{g} > 2\}} = 2k,k\in \mathbb{N}$ and 
+$n=1+m+2k$. This is $n-m=2k+1$, an odd number. 
+
+If $n$ is even number, then $m = n - (2k+1) > 0$, i.e. $G$ contain elements of order $2$. 
+\end{solution}
+
+% Problem 1.10
+\begin{problem}[1.10]
+Suppose the order of $g$ is odd. What can you say about the order of $g^2$?
+\end{problem}
+
+\begin{solution}
+If $\abs{g}$ is odd, then $\gcd(2,\abs{g}) = 1$. Hence $\abs{g^2} = \frac{\abs{g}}{\gcd(2,\abs{g})} = \abs{g}$
+\end{solution}
+
+% Problem 1.11
+\begin{problem}[1.11]
+Prove that for all $g,h$ in a group $G$, $\abs{gh}=\abs{hg}$.(Hint: Prove that $\abs{aga^{-1}}=\abs{g}$ for all $a,g$ in G.)
+\end{problem}
+
+\begin{solution}
+For $h,g\in G$, 
+$$(hgh^{-1})^{\abs{g}} = hg^{\abs{g}}h^{-1} = 1.$$ Therefore $\abs{hgh^{-1}}\mid \abs{g}$.
+On the other hand, $g=h^{-1}(hgh^{-1})h$ implies $\abs{g} \mid \abs{hgh^{-1}}$.
+This proves $\abs{hgh^{-1}}=\abs{g}$. Taking $g=gh$, we have 
+$\abs{hg} = \abs{hghh^{-1}}=\abs{gh}$
+\end{solution}
+
+% Problem 1.12
+\begin{problem}[1.12]
+$\vartriangleright$In the group of invertible $2\times 2$ matrices, consider
+$$g=\left(\begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array} \right), \indent h=\left(\begin{array}{cc} 0 & 1 \\ -1 & -1 \end{array} \right).$$
+Verify that $\abs{g}=4$, $\abs{h}=3$ and $\abs{gh}=\infty$.[\S 1.6]
+\end{problem}
+
+\begin{solution}
+$g \neq I, g^2=\left(\begin{array}{cc} -1 & 0 \\ 0 & -1 \end{array} \right)\neq I, 
+g^3=\left(\begin{array}{cc} 0 & 1 \\ -1 & 0 \end{array} \right)\neq I, g^4 = I$.
+So $\abs{g}=4$.\\
+$h\neq I, h^2=\left(\begin{array}{cc} -1 & -1 \\ 1 & 0 \end{array} \right)\neq I, h^3 = I$, So $\abs{h} = 3$\\
+$gh=\left(\begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right), (gh)^n = \left(\begin{array}{cc} 1 & n \\ 0 & 1 \end{array} \right)$
+So. $\abs{gh} = \infty$.
+\end{solution}
+
+% Problem 1.13
+\begin{problem}[1.13]
+$\vartriangleright$Give an example showing that $\abs{gh}$ is not necessarily equal to $\lcm(\abs{g},\abs{h})$, even if $g$ and $h$
+commute.[\S 1.6, 1.14]
+\end{problem}
+
+\begin{solution}
+Let's consider the group $\mathbb{Z}_{12}$ defined as the following:
+\begin{enumerate}
+\item $\mathbb{Z}_{12} = \{[0], [1], [2],\cdots, [11]\}$
+\item For $[a], [b]\in \mathbb{Z}_{12}$, define the group product as $[a][b] = [c]$, where $c= (a+b) \mod 12$.
+\end{enumerate}
+It is easy to verify that $\mathbb{Z}_{12}$ is a commutative group, and 
+\begin{enumerate}
+\item $\abs{[2]} = 6$ and $\abs{[4]} = 3$. Thus $\lcm(\abs{[2]}, \abs{[4]}) = 6$
+\item $[2][4]=[6]$ and $\abs{[6]} = 2$.
+\end{enumerate}
+It shows that $\abs{[2][4]} \neq \lcm(\abs{[2]}, \abs{[4]})$.
+\end{solution}
+
+
+% Problem 1.14
+\begin{problem}[1.14]
+$\vartriangleright$ As a counterpoint to Exercise 1.13, prove that if $g$ and $h$ commute and
+$\gcd(\abs{g}, \abs{h})=1$, then $\abs{gh}=\abs{g}\abs{h}$.(Hint: Let $N=\abs{gh}$; then $g^N=(h^{-1})^{N}$.What
+can you say about this element?) [\S 1.6, 1.15, IV.2.5]
+\end{problem}
+
+\begin{solution}
+As suggested in hint, we calculate 
+$$1 = (gh)^N = g^Nh^N\Longrightarrow g^N = (h^{-1})^N.$$
+Therefore, $g^N$ and $(h^{-1})^{N}$ has the same order, denoted by $t$. By Proposition 1.13, we have
+$$t = \abs{g^N} = \frac{\abs{g}}{\gcd(N, \abs{g})} = \frac{\abs{h}}{\gcd(N, \abs{h})} = \abs{(h^{-1})^N}.$$
+It is obvious that $t$ is a common divisor of $\abs{g}$ and $\abs{h}$. Since $\gcd(\abs{g}, \abs{h})=1$, $t$ must be $1$.
+This means $g^N = 1 = (h^{-1})^N$. Thus
+$$\abs{g} \mid N, \abs{h} \mid N\Longrightarrow \abs{g}\abs{h}\mid N.$$
+On the other hand, since $(gh)^{\abs{g}\abs{h}} =1$, $N\mid\abs{g}\abs{h}$.
+
+This proves that $N = \abs{g}\abs{h}$
+\end{solution}
+
+%Problem 1.15
+\begin{problem}[1.15]
+$\neg$ Let $G$ be a commutative group, and let $g \in G$ be an element of maximal
+finite order, that is, such that if $h \in G$ has finite order, then $\abs{h} \leq \abs{g}$. 
+Prove that in fact if $h$ has finite order in $G$, then $\abs{h}$ divides $\abs{g}$. (Hint: 
+Argue by contradiction. If $\abs{h}$ is finite but does not divide $\abs{g}$, 
+then there is a prime integer $p$ such that $\abs{g}=p^mr$, $\abs{h}=p^ns$, with $r$ and $s$ relatively 
+prime to $p$ and $m < n$. Use Exercise 1.14 to compute the order of $g^{p^m}h^s$.) [\S 2.1, 4.11, IV.6.15]
+\end{problem}
+
+\begin{solution}
+Applying prime factorization theorem to $\abs{g}$ and $\abs{h}$, we have
+$$\abs{g} = p_1^{m_1}p_2^{m_2}\cdots p_l^{m_l}, \indent \abs{h} = p_1^{n_1}p_2^{n_2}\cdots p_l^{n_l},$$
+where $m_i \geq 0, n_i \geq 0, i = 1, 2,\cdots l$.
+
+If $\abs{h}\nmid\abs{g}$, then there is $p_j$ such that $n_j > m_j$. So, denoting $p_j, m_j, n_j$ by $p,m,n$ repsectively, 
+we can rewrite 
+$\abs{g}$ and $\abs{h}$ as
+$$\abs{g} = p^{m}r, \abs{h} = p^ns$$
+where $m < n$, $\gcd(r,p)=1, \gcd(s,p) = 1$.
+
+By applying proposition 1.13, we have
+$$\abs{g^{p^m}} = \frac{\abs{g}}{\gcd(p^m, \abs{g})} = r, \abs{h^s} = \frac{\abs{h}}{\gcd(s,\abs{h})} = p^n.$$
+Since $\gcd(r, p^n) = 1$, the order of $g^{p^m}h^s$ must be $\abs{g^{p^m}}\abs{h^s} = p^nr$.i.e.
+$$\abs{g^{p^m}h^s} = p^nr > p^mr=\abs{g}.$$
+This contradicts the assumption that $g$ is the maximal order element in $G$. Hence $\abs{h}\mid\abs{g}$.
+\end{solution}
