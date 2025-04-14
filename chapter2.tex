@@ -251,3 +251,76 @@ Since $\gcd(r, p^n) = 1$, the order of $g^{p^m}h^s$ must be $\abs{g^{p^m}}\abs{h
 $$\abs{g^{p^m}h^s} = p^nr > p^mr=\abs{g}.$$
 This contradicts the assumption that $g$ is the maximal order element in $G$. Hence $\abs{h}\mid\abs{g}$.
 \end{solution}
+
+\subsection{\textsection2. Examples of groups}
+
+%Problem 2.1
+\begin{problem}[2.1]
+$\neg$One can associate an $n\times n$ matrix $M_\sigma$ with a permutation $\sigma \in S_n$, by
+        letting the entry at $(i, \sigma(i))$ be 1, and letting all other entries be 0. For example,
+        the matrix corresponding to the permutation
+        \[
+        \sigma=\left(
+        \begin{matrix}  
+        1 & 2 & 3\\     
+    3 & 1 & 2   
+        \end{matrix}
+        \right)\in S_3
+        \]
+        would be 
+        \[
+        M_\sigma=\left(
+        \begin{matrix}  
+        0 & 0 & 1\\     
+        1 & 0 & 0\\     
+        0 & 1 & 0
+        \end{matrix}
+        \right)
+        \]
+        Prove that, with this notation,
+        \[
+        M_{\sigma\tau}=M_{\sigma}M_{\tau}
+        \]
+        for all $\sigma,\tau\in S_n$, where the product on the right is the ordinary product of matrices.
+\end{problem}
+\begin{solution}
+$\sigma(i) = j$ $\iff$ the entry at $(i,j)$ position of $M_{\sigma}$ is $1$, the other entries on $i$-th row, $j$-th column are zero.\\
+$\tau(j) = k$ $\iff$ the entry at $(j,k)$ position of $M_{\tau}$ is $1$, the other entries on $j$-th row, $k$-th column are zero.\\
+The entry $(i,k)$ of $M_{\sigma}M_{\tau}$ is 1, the other entries in $i$-th row and $k$-th column are zero. This is the same as $M_{\sigma\tau}$ since 
+$(\sigma\tau)(i) = \tau(\sigma(i)) = k$.\\
+
+\noindent Applying this  argument with $i=1,2, \cdots, n$, we can conclude that $M_{\sigma\tau}=M_{\sigma}M_{\tau}$.
+\end{solution}
+
+%Problem 2.2
+\begin{problem}[2.2]
+ $\vartriangleright$ Prove that if $d \le n$, then $S_n$ contains elements of order $d$.[\S 2.1]
+\end{problem}
+\begin{solution}
+The element 
+ \[\sigma=\left(
+        \begin{matrix}  
+        1 & 2 & 3 & \cdots & d & (d+1) &\cdots & n\\     
+    	d & 1 & 2 & \cdots & (d-1) &(d+1) &\cdots & n  
+        \end{matrix}
+        \right)
+ \]
+ has order $d$.  
+\end{solution}
+
+%Problem 2.2
+\begin{problem}[2.3]
+        For every positive integer $n$ find an element of order $n$ in $S_\mathbb{N}$.
+\end{problem}
+\begin{solution}
+The element in $S_\mathbb{N}$ is an automorphism of $\mathbb{N}$. Define the automorphism $f:\mathbb{N}\to \mathbb{N}$ as the following:
+\[
+f(n)=
+\begin{cases}
+d-1, &n=0,\\
+n-1, &1\leq n \leq d-1,\\
+n, &n \geq d.
+\end{cases}
+\]
+It is easy to verify that the order of $f$ is $d$.
+\end{solution}
