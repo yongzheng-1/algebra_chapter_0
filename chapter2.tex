@@ -407,7 +407,8 @@ $D_{2n} =\{y, y^1,\cdots, y^n, xy, xy^2,\cdots, xy^n\}.$
 
 %Problem 2.6
 \begin{problem}[2.6]
- $\vartriangleright$ For every positive integer $n$ construct a group containing elements $g, h$ suchthat $\abs{g} = 2$, $\abs{h} = 2$, and $\abs{gh} = n$. (Hint: For $n > 1$, $D_{2n}$ will do.) [\S 1.6]
+ $\vartriangleright$ For every positive integer $n$ construct a group containing elements $g, h$ such
+that $\abs{g} = 2$, $\abs{h} = 2$, and $\abs{gh} = n$. (Hint: For $n > 1$, $D_{2n}$ will do.) [\S 1.6]
 \end{problem}
 \begin{solution}
 Let's label the vertices of $n$-gon clockwise by $1,2,\cdots, n$. 
@@ -426,7 +427,8 @@ So $\abs{gf} = n$.
 
 %Problem 2.7
 \begin{problem}[2.7]
- $\neg$ Find all elements of $D_{2n}$ that commute with every other element. (Theparity of n plays a role.) [\S IV.1.2]
+ $\neg$ Find all elements of $D_{2n}$ that commute with every other element. (The
+parity of n plays a role.) [\S IV.1.2]
 \end{problem}
 \begin{solution}
 Using the result of \hyperlink{Exercise II.2.5}{Exercise 2.5}, the dihedral group $D_{2n}$ can be written as
@@ -484,7 +486,8 @@ This proves $\abs{\mathbb{Z}/n\mathbb{Z}}=n$.
 
 %Problem 2.11
 \begin{problem}[2.11]
- $\vartriangleright$ Prove that the square of every odd integer is congruent to $1$ modulo $8$.[\S VII.5.1]
+ $\vartriangleright$ Prove that the square of every odd integer is congruent to $1$ modulo $8$.
+[\S VII.5.1]
 \end{problem}
 \begin{solution}
 Let $n = 2k+1$, then $$[n^2]_8=[4k(k+1) +1]_8 = [1]_8.$$ The last equation holds due to $2|k(k+1)$.
@@ -493,8 +496,11 @@ Let $n = 2k+1$, then $$[n^2]_8=[4k(k+1) +1]_8 = [1]_8.$$ The last equation holds
 
 %Problem 2.12
 \begin{problem}[2.12]
-Prove that there are no nonzero integers $a$, $b$, $c$ such that $a^2+b^2 = 3c^2$. (Hint:By studying the equation $[a]^2_4 + [b]^2_4 = 3[c]^2_4$in $\mathbb{Z}/4\mathbb{Z}$, show that $a$, $b$, $c$ would all have to be even. 
-Letting $a = 2k$,$b = 2\ell$,$c=2m$, you would have $k^2 +\ell^2=3m^2$.What's wrong with that?)
+Prove that there are no nonzero integers $a$, $b$, $c$ such that $a^2+b^2 = 3c^2$. (Hint:
+By studying the equation $[a]^2_4 + [b]^2_4 = 3[c]^2_4$
+in $\mathbb{Z}/4\mathbb{Z}$, show that $a$, $b$, $c$ would all have to be even. 
+Letting $a = 2k$,$b = 2\ell$,$c=2m$, you would have $k^2 +\ell^2=3m^2$.
+What's wrong with that?)
 \end{problem}
 \begin{solution}
 Notice $[0]^2_4 =[2]^2_4=[0]_4, [1]^2_4=[3]^2_4=[1]_4$, if $a^2+b^2 = 3c^2$ has solution, then $[a]_4^2+[b]^2_4 = 3[c]_4^2$ has the same solution.
@@ -510,8 +516,10 @@ The equation holds only if they are $[0]_4$. i.e. $k=\ell=m=0$. This proves only
 %Problem 2.13
 \hypertarget{Exercise II.2.13}{}
 \begin{problem}[2.13]
-$\vartriangleright$ Prove that if $\gcd(m, n) = 1$, then there exist integers $a$ and $b$ such that$$am + bn = 1.$$ 
-(Use Corollary 2.5.) Conversely, prove that if $am+bn = 1$ for some integers $a$ and $b$,then $\gcd(m, n) = 1$. [2.15, \S V.2.1, V.2.4]
+$\vartriangleright$ Prove that if $\gcd(m, n) = 1$, then there exist integers $a$ and $b$ such that
+$$am + bn = 1.$$ 
+(Use Corollary 2.5.) Conversely, prove that if $am+bn = 1$ for some integers $a$ and $b$,
+then $\gcd(m, n) = 1$. [2.15, \S V.2.1, V.2.4]
 \end{problem}
 
 \begin{solution}
@@ -525,7 +533,8 @@ Conversely, It is obvious that $1 | \gcd(m,n)$. On the other hand, if $am+bn = 1
 
 %Problem 2.14
 \begin{problem}[2.14]
-$\vartriangleright$ State and prove an analog of Lemma 2.2, showing that the multiplicationon $\mathbb{Z}/n\mathbb{Z}$ is a well-defined operation. [\S 2.3, \S III.1.2]
+$\vartriangleright$ State and prove an analog of Lemma 2.2, showing that the multiplication
+on $\mathbb{Z}/n\mathbb{Z}$ is a well-defined operation. [\S 2.3, \S III.1.2]
 \end{problem}
 \begin{solution}
 \underline{Statement} If $a\equiv a' \mod n$ and $b\equiv b'\mod n$, then $ab \equiv a'b'\mod n$.\\
@@ -582,7 +591,9 @@ This proves the statement.
 
 %Problem 2.18
 \begin{problem}[2.18]
-For $d \leq n$, define an injective function $\mathbb{Z}/d\mathbb{Z} \to S_n$ preserving the operation,that is, such that the sum of equivalence classes in $\mathbb{Z}/d\mathbb{Z} \to S_n$ corresponds to the productof the corresponding permutations.
+For $d \leq n$, define an injective function $\mathbb{Z}/d\mathbb{Z} \to S_n$ preserving the operation,
+that is, such that the sum of equivalence classes in $\mathbb{Z}/d\mathbb{Z} \to S_n$ corresponds to the product
+of the corresponding permutations.
 \end{problem}
 \begin{solution}
 Let \[\sigma=\left(
@@ -601,10 +612,135 @@ This map will preserve the operations.
 %Problem 2.19
 \begin{problem}[2.19]
 $\vartriangleright$ Both $(\mathbb{Z}/5\mathbb{Z})^{\ast}$ and $(\mathbb{Z}/12\mathbb{Z})^{\ast}$ consist of $4$ elements.
-Write their multiplication tables, and prove that no re-ordering of the elements will make them match.(Cf. Exercise 1.6.) [\S 4.3]
+Write their multiplication tables, and prove that no re-ordering of the elements will make them match.
+(Cf. Exercise 1.6.) [\S 4.3]
 \end{problem}
 \begin{solution}
 $$(\mathbb{Z}/5\mathbb{Z})^{\ast} = \{[1]_5,[2]_5,[3]_5, [4]_5\}.$$ Each non-unit element in $(\mathbb{Z}/5\mathbb{Z})^{\ast}$ could generate the entire group.
 $$(\mathbb{Z}/12\mathbb{Z})^{\ast} =\{[1]_{12}, [5]_{12}, [7]_{12}, [11]_{12}\}.$$ Each non-unit element in $(\mathbb{Z}/5\mathbb{Z})^{\ast}$ has order $2$. 
 There is no isomorphism between these two groups.
 \end{solution}
+
+
+\subsection{\textsection3. The category $\mathsf{Grp}$}
+
+%Problem 3.1
+\begin{problem}[3.1]
+$\vartriangleright$ Let $\phi: G \to H$ be a morphism in a category $\mathsf{C}$ with products. Explain why
+there is a unique morphism $(\phi \times \phi): G \times G \to H \times H$ compatible in the evident
+way with the natural projections.
+(This morphism is defined explicitly for $\mathsf{C} = \mathsf{Set}$ in \S 3.1.) [\S 3.1, 3.2]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+%Problem 3.2
+\begin{problem}[3.2]
+  Let $\varphi : G\rightarrow H, \psi : H \rightarrow K$ be morphisms in a category with products, and
+  consider morphisms between the products $G\times G, H\times H, K\times K$ as in Exercise 3.1.
+  Prove that
+  \[
+  (\psi\varphi) \times(\psi\varphi)=(\psi \times \psi)(\varphi\times \varphi) .
+  \]
+  (This is part of the commutativity of the diagram displayed in \textsection 3.2.)
+\end{problem}
+\begin{solution}
+\end{solution}
+
+%Problem 3.3
+\hypertarget{Exercise II.3.3}{}
+\begin{problem}[3.3]
+  Show that if $G, H$ are abelian groups, then $G \times H$ satisfies the universal property for coproducts in $\mathsf{Ab}$.
+\end{problem}
+\begin{solution}
+Let's define the operation $\ast$ on $G\times H$ as the following:
+$$(g_1,h_1)\ast(g_2,h_2) = (g_1g_2, h_1h_2).$$ It is easy to verify that $(G\times H, \ast)$ is an abelian group.
+
+\noindent Define the inclusion functions
+$$\iota_G: G \to G\times H, \iota_G(g)=(g, e_H),$$
+$$\iota_H: H \to G\times H, \iota_G(h)=(e_G, h).$$
+It is not complicate to verify that both $\iota_G$ and $\iota_H$ are group homomorphisms.
+
+\noindent For homomorphisms $\phi_G: G\to A$ and $\phi_H: H\to A$, we can define a set-function 
+$$\phi_{GH}: G\times H \to A, \phi_{GH}((g,h))=\phi_G(g)\phi_H(h).$$
+For $g\in G$, $$(\iota_G\phi_{GH})(g) = \phi_{GH}(\iota_G(g)) = \phi_{GH}((g, e_H))=\phi_G(g)\phi_H(e_H)=\phi_G(g).$$
+For $h\in H$, $$(\iota_H\phi_{GH})(h) = \phi_{GH}(\iota_H(h)) = \phi_{GH}((e_G, h))=\phi_G(e_G)\phi_H(h)=\phi_H(h).$$
+
+\noindent Now, we prove $\phi_{GH}$ is a group homomorphism. In fact, $\forall (g_1,h_1), (g_2,h_2)\in G\times H$
+\begin{equation*}\begin{split}
+\phi_{GH}((g_1, h_1)\ast(g_2,h_2)) &= \phi_{GH}((g_1g_2,h_1h_2))\\&=\phi_G(g_1g_2)\phi_H(h_1h_2) \\&= (\phi_G(g_1)\phi_H(h_1))(\phi_G(g_2)\phi_H(h_2)) \\&=\phi_{GH}((g_1,h_1))\phi_{GH}((g_2,h_2))
+\end{split}
+\end{equation*}
+So, we have proved that $G\times H$ is the coproduct in $\mathsf{Ab}$. 
+\end{solution}
+
+%Problem 3.4
+\begin{problem}[3.4]
+  Let $G, H$ be groups, and assume that $G\cong H\times G$. Can you conclude that $H$ is trivial? (Hint: No. Can you construct a counterexample?)
+\end{problem}
+\begin{solution}
+\end{solution}
+
+%Problem 3.9
+\begin{problem}[3.9]
+Show that fiber products and coproducts exist in $\mathsf{Ab}$. (Cf. Exercise I.5.12. For
+coproducts, you may have to wait until you know about $\mathit{quotients}$.)
+\end{problem}
+\begin{solution}
+\underline{Fiber product}: For $A, B, C$ in $\mathsf{Ab}$, let's define the following product structure:
+\[
+\begin{tikzcd}
+& A \arrow[dr, "\alpha"]& \\
+A\times_C B \arrow[ur, "\pi_A"] \arrow[dr, "\pi_B"'] & & Z\\
+& B \arrow[ur, "\beta"'] &
+\end{tikzcd}
+\]
+where $$A\times_C B=\{(a,b)| \alpha(a)=\beta(b)\}\subset A\times B$$ and $$\pi_A: A\times_C B \to A, \pi_A((a,b)) = a,$$ 
+$$\pi_B: A\times_C B \to B, \pi_B((a,b)) = b.$$ 
+It is not hard to prove:
+\begin{itemize}
+\item For $\forall (a_1,b_1)\in A\times_C B, (a_2,b_2)\in A\times_C B$, define operation $\ast$ as  $$(a_1,b_1)\ast (a_2,b_2) = (a_1a_2, b_1b_2).$$
+Equipped with $\ast$, $A\times_C B$ is an abelian group.
+\item It is obvious that $\pi_A: A\times_C B \to A$ and $\pi_B: A\times_C B \to B$ are group homomorphisms.
+\item By definition, $\forall (a,b)\in A\times_C B$, $$(\alpha\pi_A)((a,b)) = \alpha(a) = \beta(b) = (\beta\pi_B)((a,b)).$$
+\end{itemize}
+
+$\forall Z$ in $\mathsf{Ab}$ and the group homomorphisms $f_A: Z\to A$, f$_B: Z\to B$. If $\alpha f_A = \beta f_B$, then we can define $\sigma: Z\to A\times_C B$ such that the following diagram commutative:
+\[
+\begin{tikzcd}
+& & A \arrow[dr, "\alpha"]& \\
+Z\arrow[r, "\sigma"] \arrow[urr, bend left, "f_A" near end] \arrow[drr, bend right, "f_B"' near end] &A\times_C B \arrow[ur, "\pi_A"] \arrow[dr, "\pi_B"'] & & Z\\
+&& B \arrow[ur, "\beta"'] &
+\end{tikzcd}
+\]
+where $\sigma(z) = (f_A(z), f_B(z))$. It is not hard to prove that $\sigma$ is a group homomorphism and $f_A = \pi_A\sigma, f_B=\pi_B\sigma$. It proves that $A\times_C B$ with the standard projections is the fibered product of the category $\mathsf{Ab}$.
+
+\noindent \underline{Fiber coproduct}: For $C, A, B$ in $\mathsf{Ab}$ and the homomorphisms $\alpha: C\to A, \beta: C\to B$, let's consider the subgroup 
+$\ker(\alpha)\cap \ker(\beta)\subset C$ and the quotient group $C/\big{(}\ker(\alpha)\cap \ker(\beta)\big{)}$.
+ 
+ 
+ 
+let's define the following structure: 
+$$A\amalg_C B=
+\begin{cases}
+(0, a), &\text{ if } a\notin \alpha(C)\subset A \\
+(1, b), &\text{ if } b \notin \beta(C)\subset B \\
+(0,a)\sim (1,b), &\text{ if } a=\alpha(c), b=\beta(c).
+\end{cases}$$
+i.e. in $A\amalg_C B$,  $(0,a)=(1,b)$, if there is $c$ such that $a=\alpha(c), b=\beta(c)$.
+\begin{itemize}
+\item Define an operation $\ast$ on $A\amalg_C B$ as the following:
+
+\end{itemize}
+
+\end{solution}
+
+
+
+
+
+
+
+
+
+
